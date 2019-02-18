@@ -1,30 +1,13 @@
 <template>
   <div id="app">
-<navbar></navbar>
+    <navbar></navbar>
     <div class="container">
       <div class="row">
         <div class="col-sm-9">
-          <div class="card" style="width: 18rem;">
-            <img src="http://blog.imamhossainroni.me/admin/upload/5094622a13.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
+          <inventory></inventory>
         </div>
         <div class="col-sm-3">
-          <ul class="list-group">
-            <li class="list-group-item">
-              Item-price
-            </li>
-            <li class="list-group-item">
-              Item-price
-            </li>
-            <li class="list-group-item">
-              Item-price
-            </li>
-          </ul>
+          <cart></cart>
         </div>
       </div>
     </div>
@@ -32,20 +15,23 @@
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld'
-import data from "./data.js"
-import Navbar from "./components/Navbar";
+  // import HelloWorld from './components/HelloWorld'
+  import data from "./data.js"
+  import Navbar from "./components/Navbar";
+  import Inventory from "./components/Inventory";
+  import Cart from "./components/Cart";
 
-export default {
-  name: 'App',
-  components: {
-    Navbar
-
-  },
-  mounted() {
-    console.log(data)
+  export default {
+    name: 'App',
+    components: {
+      Inventory,
+      Navbar,
+      Cart
+    },
+    mounted() {
+      console.log(data)
+    }
   }
-}
 </script>
 
 <style>
