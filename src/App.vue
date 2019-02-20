@@ -7,7 +7,7 @@
           <inventory @newItemAdded="addCartItem" :items="items"></inventory>
         </div>
         <div class="col-sm-3">
-          <cart></cart>
+          <cart @newItemRemoved="removeCartItem" :items="carts"></cart>
         </div>
       </div>
     </div>
@@ -41,6 +41,9 @@
       addCartItem(item) {
         this.carts.push(item);
         console.log(this.carts)
+      },
+      removeCartItem(index){
+        this.carts.splice(index,1)
       }
     }
   };
