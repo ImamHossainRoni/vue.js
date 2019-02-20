@@ -1,4 +1,4 @@
-# vuecrud
+# vue.js started :)
 
 > A Vue.js project
 
