@@ -4,7 +4,7 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-9">
-          <inventory></inventory>
+          <inventory @newItemAdded="addCartItem" :items="items"></inventory>
         </div>
         <div class="col-sm-3">
           <cart></cart>
@@ -16,22 +16,34 @@
 
 <script>
   // import HelloWorld from './components/HelloWorld'
-  import data from "./data.js"
+  import data from "./data.js";
   import Navbar from "./components/Navbar";
   import Inventory from "./components/Inventory";
   import Cart from "./components/Cart";
 
   export default {
-    name: 'App',
     components: {
-      Inventory,
       Navbar,
-      Cart
+      Cart,
+      Inventory
+    },
+    data() {
+      return {
+        items: [],
+        carts: []
+      };
     },
     mounted() {
-      console.log(data)
+      this.items = data;
+      // console.log(data);
+    },
+    methods: {
+      addCartItem(item) {
+        this.carts.push(item);
+        console.log(this.carts)
+      }
     }
-  }
+  };
 </script>
 
 <style>
