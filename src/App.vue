@@ -1,9 +1,14 @@
 <template>
   <div id="app">
+    <router-link :to="{path:'/'}">Home</router-link>
+    <router-link :to="{path:'/test/1'}">test-1</router-link>
+    <router-link :to="{path:'/test/2'}">test-2</router-link>
+    <router-link :to="{path:'/test/3'}">test-3</router-link>
     <navbar @search="search"></navbar>
     <div class="container">
       <div class="row">
         <div class="col-sm-9">
+          <router-view></router-view>
           <inventory @newItemAdded="addCartItem" :items="items"></inventory>
         </div>
         <div class="col-sm-3">
@@ -15,10 +20,9 @@
 </template>
 
 <script>
-  // import HelloWorld from './components/HelloWorld'
   import data from "./data.js";
   import Navbar from "./components/Navbar";
-  import Inventory from "./components/Inventory";
+  import Inventory from "./components/views/Inventory";
   import Cart from "./components/Cart";
 
   export default {
