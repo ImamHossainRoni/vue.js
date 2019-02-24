@@ -1,14 +1,14 @@
 <template>
   <div id="app">
-    <router-link :to="{path:'/'}">Home</router-link>
-    <router-link :to="{path:'/test/1'}">test-1</router-link>
-    <router-link :to="{path:'/test/2'}">test-2</router-link>
-    <router-link :to="{path:'/test/3'}">test-3</router-link>
+    <!--<router-link :to="{path:'/'}">Home</router-link>-->
+    <!--<router-link :to="{path:'/test/1'}">test-1</router-link>-->
+    <!--<router-link :to="{path:'/test/2'}">test-2</router-link>-->
+    <!--<router-link :to="{path:'/test/3'}">test-3</router-link>-->
     <navbar @search="search"></navbar>
     <div class="container">
       <div class="row">
         <div class="col-sm-9">
-          <router-view></router-view>
+          <!--<router-view></router-view>-->
           <inventory @newItemAdded="addCartItem" :items="items"></inventory>
         </div>
         <div class="col-sm-3">
@@ -38,7 +38,7 @@
       };
     },
     mounted() {
-      this.items = data;
+      // this.items = data;
       // console.log(data);
     },
     methods: {

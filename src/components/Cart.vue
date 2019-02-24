@@ -28,7 +28,7 @@
       totalPrice(item){
         var total = 0
         this.items.forEach(item=>{
-          total +=parseFloat(item.price.substr(1))
+          total +=parseFloat(item.price)
         });
         return total
       }

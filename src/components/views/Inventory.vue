@@ -12,15 +12,25 @@
 </template>
 
 <script>
+  import axios from 'axios'
   export default {
     data(){
       return{
         items:[]
       }
     },
+    mounted(){
+   this.fetchInventory()
+    },
     methods:{
       addToCart(item){
         this.$emit("newItemAdded",item)
+      },
+      fetchInventory(){
+        var self = this
+        axios.get('http://localhost:3000/items').then(response=>{
+          self.items = response.data
+        })
       }
     }
   };
