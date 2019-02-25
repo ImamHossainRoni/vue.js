@@ -8,8 +8,7 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-9">
-          <!--<router-view></router-view>-->
-          <inventory @newItemAdded="addCartItem" :items="items"></inventory>
+          <router-view @newItemAdded="addCartItem" :items="items"></router-view>
         </div>
         <div class="col-sm-3">
           <cart @newItemRemoved="removeCartItem" :items="carts"></cart>
