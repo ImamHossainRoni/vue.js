@@ -1,6 +1,6 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">vue-cli</a>
+    <router-link :to="{path:'/'}" class="navbar-brand" href="#">vue-cli</router-link>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -15,6 +15,7 @@
 </template>
 
 <script>
+  import axios from 'axios'
     export default {
 data(){
   return{
@@ -23,7 +24,9 @@ keyword:''
 },
  methods:{
    search(keyword){
-     this.$emit("search",this.keyword)
+    axios.get('http://localhost:3000/search/' + this.keyword).then(response=>{
+      console.log(response.data)
+    })
    }
 
  }

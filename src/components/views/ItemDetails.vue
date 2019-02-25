@@ -5,8 +5,9 @@
   </div>
   <div class="col-sm-6">
     <h4>{{ item.title }}</h4>
-    <p>{{ item.pricce }}</p>
+    <p style="color: #cd5c5c;">Price : {{ item.price }}</p>
     <p>{{ item.description }}</p>
+
   </div>
 </div>
   <div v-else>
