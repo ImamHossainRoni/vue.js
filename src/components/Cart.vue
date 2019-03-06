@@ -18,13 +18,15 @@
 
 <script>
   export default {
-    props:['items'],
     methods:{
       removeItem(index){
-        this.$emit("newItemRemoved",index)
+        this.$store.commit('removeItem',index)
       }
     },
     computed:{
+      items(){
+        return this.$store.getters.getCart
+      },
       totalPrice(item){
         var total = 0
         this.items.forEach(item=>{

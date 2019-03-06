@@ -7,12 +7,15 @@
     <h4>{{ item.title }}</h4>
     <p style="color: #cd5c5c;">Price : {{ item.price }}</p>
     <p>{{ item.description }}</p>
-
+    <div class="card-footer">
+      <a @click="addToCart(item)" class="btn btn-primary" >+Add to cart</a>
+    </div>
   </div>
 </div>
   <div v-else>
     <h1>Data is loading......</h1>
   </div>
+
 </template>
 
 <script>
