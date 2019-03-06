@@ -28,7 +28,8 @@
     },
     methods:{
       addToCart(item){
-        this.$emit("newItemAdded",item)
+        console.log("Commit");
+        this.$store.commit('addToCart',item)
       },
       fetchInventory(){
         var self = this
