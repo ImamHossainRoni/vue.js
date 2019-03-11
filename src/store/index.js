@@ -12,6 +12,9 @@ export  const storage = {
     }
   },
   mutations:{
+    getInventory(state,payload){
+      state.inventory = payload
+    },
     addToCart(state,payload) {
       state.cart.push(payload)
     },

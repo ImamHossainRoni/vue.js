@@ -35,6 +35,7 @@
         var self = this
         axios.get('http://localhost:3000/items').then(response=>{
           self.items = response.data
+          self.$store.commit('getInventory',response.data)
         })
       }
     }

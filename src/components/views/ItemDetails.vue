@@ -38,7 +38,11 @@
               self.item =  response.data
             })
 
-          }
+          },
+        addToCart(item){
+          console.log("Commit");
+          this.$store.commit('addToCart',item)
+        }
       }
     }
 </script>
